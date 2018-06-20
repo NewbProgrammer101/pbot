@@ -13,16 +13,16 @@ use parent '_c_base';
 sub initialize {
   my ($self, %conf) = @_;
 
-  $self->{name}            = 'c++';
+  $self->{name}            = 'C++';
   $self->{sourcefile}      = 'prog.cpp';
   $self->{execfile}        = 'prog';
-  $self->{default_options} = '-std=c++14 -Wextra -Wall -Wno-unused -pedantic -Wfloat-equal -Wshadow -lm -Wfatal-errors -fsanitize=alignment,undefined';
+  $self->{default_options} = '-fprofile-arcs -ftest-coverage -std=c++14 -Wextra -Wall -Wno-unused -pedantic -Wfloat-equal -Wshadow -lm -Wfatal-errors -fsanitize=alignment,undefined';
   $self->{options_paste}   = '-fdiagnostics-show-caret';
   $self->{options_nopaste} = '-fno-diagnostics-show-caret';
   $self->{cmdline}         = 'g++ -ggdb -g3 $sourcefile $options -o $execfile';
 
   $self->{prelude} = <<'END';
-#if 0
+
 #define _XOPEN_SOURCE 9001
 #define __USE_XOPEN
 
@@ -106,10 +106,6 @@ sub initialize {
 #include <cstdint>
 
 #include <prelude.h>
-
-#endif
-
-#include <prelude.hpp>
 
 END
 }

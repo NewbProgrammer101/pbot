@@ -22,11 +22,11 @@ sub initialize {
     $self->{cmdline} .= " $self->{arguments}";
   }
 
-  $self->{cmdline_opening_comment} = ": <<'____CMDLINE____'\n";
-  $self->{cmdline_closing_comment} = "____CMDLINE____\n";
+  $self->{cmdline_opening_comment} = ": <<'____BASH COMMAND LINE____'\n";
+  $self->{cmdline_closing_comment} = "____BASH COMMAND LINE____\n";
 
-  $self->{output_opening_comment} = ": << '____OUTPUT____'\n";
-  $self->{output_closing_comment} = "____OUTPUT____\n";
+  $self->{output_opening_comment} = ": << '____BASH OUTPUT____'\n";
+  $self->{output_closing_comment} = "____BASH OUTPUT____\n";
 }
 
 1;
