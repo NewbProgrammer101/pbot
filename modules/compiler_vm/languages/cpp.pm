@@ -107,7 +107,6 @@ sub initialize {
 
 #include <prelude.h>
 
-using namespace std;
 #endif
 
 #include <prelude.hpp>
